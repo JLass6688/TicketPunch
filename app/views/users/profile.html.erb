@@ -11,13 +11,10 @@
     <img src="http://www.clker.com/cliparts/Q/l/L/B/F/a/search-icon-md.png" id="search-icon">
   </div>
 
-<<<<<<< HEAD
+
     
   <h5 id="movie-header">My Movies</h5>
-=======
 
-  <h5>My Movies</h5>
->>>>>>> a64eaadfc5828c221f3f9dd1f8d16a5796fcbd13
     <input id='movie_search' type="text" placeholder='...movie title'>
 
 
@@ -26,7 +23,7 @@
 
 
 
-
+    <div id="delete-screen"></div>
 
     <div id='movie-display'></div>
 
@@ -37,13 +34,13 @@
       <% @user.watch_list_entries.each do |entries| %>
         <tr>
           <td class="ui-state-default">
-          <%= entries.movie.title %>
+            <h3><%= entries.movie.title %></h3>
           </td>
           <td>
             <form action="/users/wish/<%= entries.id %>" method="post">
               <%= token_tag %>
               <input type="hidden" name="_method" value="delete">
-              <input type="submit" value="Remove">
+              <input type="submit" value="Remove" id="delete-button">
             </form>
           </td>
         </tr>
@@ -54,18 +51,18 @@
 
   <script id='movie-template' type='text/template' charset="utf-8">
     <h2 class='title'>
-      <strong>Title:</strong> <br>    <%%= title %>
+      <%%= title %>
     </h2>
-    <h2 class='meta-info'>
+    <h3 class='meta-info'>
       <%%= director %> (<%%= released %>)
-    </h2>
-    <h2 class='plot'>
+    </h3>
+    <p class='plot'>
       <%%= plot %>
-    </h2>
+    </p>
     <form action="/users/wish" method="post">
       <%= token_tag %>
       <input type="hidden" name="movie_id" value="<%%= id %>">
-      <input type="submit" value="Add To Watch List">
+      <input type="submit" value="Add To Watch List" id="add-to">
     </form>
   </script>
 
@@ -81,7 +78,7 @@
         evt.preventDefault();
         $(searchBar).slideToggle("slow");
         $('#movie-header').hide();
-        $('#movie-container').hide();
+        $('.movie-container').hide();
       })
 
     })
