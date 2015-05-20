@@ -1,2 +1,62 @@
-<h3>Sign-Up</h3>
-<%= render partial: 'form' %>
+<!--
+<div class="container">
+<!-- Top Navigation -->
+<header class="codrops-header">
+	<h1>TicketPunch</h1>
+</header>
+<section>
+    <%= form_for , :id => "theForm", :class => "simForm" @user do |f|  %>
+		<div class="simform-inner">
+
+			<ol class="questions">
+				<li>
+          <span><%= f.label :username, :for => "q1" %>:</span>
+          <%= f.text_field :username, :id => "q1", :name => "q1" %>
+				</li>
+				<li>
+          <span><%= f.label :password, :for => "q2" %>:</span>
+          <%= f.password_field :password, :id => "q2", :name => "q2" %>
+				</li>
+				<li>
+					<span><%= f.label :email :for => "q3" %>:</span>
+          <%= f.text_field :email, :id => "q3", :name => "q3" %>
+				</li>
+			</ol><!-- /questions -->
+      <%= f.submit ,:class => "submit", :type => "submit"%>
+      <% end %>
+			<div class="controls">
+				<button class="next"></button>
+				<div class="progress"></div>
+				<span class="number">
+					<span class="number-current"></span>
+					<span class="number-total"></span>
+				</span>
+				<span class="error-message"></span>
+			</div><!-- / controls -->
+		</div><!-- /simform-inner -->
+		<span class="final-message"></span>
+	</form><!-- /simform -->
+</section>
+</div><!-- /container -->
+
+<script>
+var theForm = document.getElementById( 'theForm' );
+
+new stepsForm( theForm, {
+	onSubmit : function( form ) {
+		// hide form
+		classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+		/*
+		form.submit()
+		or
+		AJAX request (maybe show loading indicator while we don't have an answer..)
+		*/
+
+		// let's just simulate something...
+		var messageEl = theForm.querySelector( '.final-message' );
+		messageEl.innerHTML = 'Thank you!';
+		classie.addClass( messageEl, 'show' );
+	}
+} );
+</script>
