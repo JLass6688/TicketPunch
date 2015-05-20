@@ -11,26 +11,34 @@
     <img src="http://www.clker.com/cliparts/Q/l/L/B/F/a/search-icon-md.png" id="search-icon">
   </div>
 
+<<<<<<< HEAD
     
   <h5 id="movie-header">My Movies</h5>
+=======
+
+  <h5>My Movies</h5>
+>>>>>>> a64eaadfc5828c221f3f9dd1f8d16a5796fcbd13
     <input id='movie_search' type="text" placeholder='...movie title'>
 
 
   <div class="container">
 
 
-    
+
 
 
 
     <div id='movie-display'></div>
 
 
-    <ul id="movie-container">
+
+    <table id="sortable" class="movie-container">
+
       <% @user.watch_list_entries.each do |entries| %>
-        <li>
+        <tr>
+          <td class="ui-state-default">
           <%= entries.movie.title %>
-        </li>
+          </td>
           <td>
             <form action="/users/wish/<%= entries.id %>" method="post">
               <%= token_tag %>
@@ -40,7 +48,7 @@
           </td>
         </tr>
       <% end %>
-    </ul>
+    </table>
 
   </div>
 
