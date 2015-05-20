@@ -16,3 +16,7 @@
 //= require underscore
 //= require_tree .
 //= require flat-ui.min.js
+//= require users.js
+//= require classie
+//= require modernizr.custom
+//= require stepsForm
