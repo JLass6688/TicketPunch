@@ -3,14 +3,92 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.title{
-  background-color: lightblue;
+$asset-slate: #2C3E4F;
+$asset-sky: #3E98D3;
+$asset-dusk: #965DA5;
+$asset-mistyforest: #2CB89A;
+$asset-wenge: #231F20;
+
+body#body-sign-in{
+	background-color: $asset-mistyforest;
+	color: $asset-wenge;
+	h3{
+		text-align: center;
+	}
+	label{
+		display: block;
+		text-align: center;
+		font-size: 18pt;
+		margin: 15px 0 5px;
+	}
+	input{
+		height: 65px;
+		line-height: 45px;
+		font-size: 18pt;
+		display: block;
+	}
+	input[type="submit"]{
+		background-color: $asset-wenge;
+		display: block;
+		margin-top: 25px;
+	}
 }
 
-.meta-info{
-  background-color: lightgreen;
+body#body-profile{
+	#logo-container{
+		width: 50%;
+		float: left;
+		margin: 15px 0 0;
+	}
+	img{
+		width: 50px;
+		margin: 0 auto;
+		display: block;
+		cursor: pointer;
+	}
+	#search-container{
+		width: 25%;
+		float: left;
+		margin: 15px 0 0;
+	}
+	h5{
+		width: 100%;
+		float: left;
+		margin: 30px 0 0;
+		padding: 5px;
+		background-color: $asset-wenge;
+		color: white;
+		text-align: center;
+		clear: both;
+
+	}
+	.sign-out{
+		width: 25%;
+		float: left;
+		background: none;
+		border: none;
+		font-size: 14pt;
+		margin: 15px 0 0;
+	}
+	.container{
+		clear: both;
+		margin-top: 25px;
+	}
+	input#movie_search{
+		float: left;
+		width: 100%;
+		height: 100px;
+		padding: 5%;
+		font-size: 18pt;
+		position: absolute;
+		top: 0;
+		left: 0;
+		outline: none;
+	}
 }
 
-.plot{
-  background-color: pink;
-}
+
+
+
+
+

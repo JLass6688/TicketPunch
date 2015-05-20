@@ -1,48 +1,83 @@
-<h1>Welcome <%= @user.username %></h1>
-
-<%= form_tag('/sessions', method: 'delete') do %>
-  <%= submit_tag "Log-Out" %>
-<% end %>
+<body id="body-profile">
 
 
-<input id='movie_search' type="text" placeholder='...movie title'>
-<div id='movie-display'></div>
+  <%= form_tag('/sessions', method: 'delete') do %>
+      <%= submit_tag "Log Out", :class => "sign-out" %>
+    <% end %>
+  <div id="logo-container">
+    <img src="/assets/logo2_black_and_white.png">
+  </div>
+  <div id="search-container">
+    <img src="http://www.clker.com/cliparts/Q/l/L/B/F/a/search-icon-md.png" id="search-icon">
+  </div>
 
 
-<table id="sortable">
-  <% @user.watch_list_entries.each do |entries| %>
-    <tr>
-      <td class="ui-state-default">
-        <%= entries.movie.title %>
-      </td>
-      <td>
-        <form action="/users/wish/<%= entries.id %>" method="post">
-          <%= token_tag %>
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Remove">
-        </form>
-      </td>
-    </tr>
-  <% end %>
-</table>
+  <h5>My Movies</h5>
+    <input id='movie_search' type="text" placeholder='...movie title'>
+
+
+  <div class="container">
 
 
 
-<script id='movie-template' type='text/template' charset="utf-8">
-  <h2 class='title'>
-    <%%= title %>
-  </h2>
-  <h4 class='meta-info'>
-    <%%= director %> (<%%= released %>)
-  </h4>
-  <p class='plot'>
-    <%%= plot %>
-  </p>
-  <form action="/users/wish" method="post">
-    <%= token_tag %>
-    <input type="hidden" name="movie_id" value="<%%= id %>">
-    <input type="submit" value="Add To Watch List">
-  </form>
 
 
-</script>
+
+    <div id='movie-display'></div>
+
+
+    <ul>
+      <% @user.watch_list_entries.each do |entries| %>
+        <li>
+          <%= entries.movie.title %>
+        </li>
+          <td>
+            <form action="/users/wish/<%= entries.id %>" method="post">
+              <%= token_tag %>
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="Remove">
+            </form>
+          </td>
+        </tr>
+      <% end %>
+    </ul>
+
+  </div>
+
+  <script id='movie-template' type='text/template' charset="utf-8">
+    <h2 class='title'>
+      <%%= title %>
+    </h2>
+    <h4 class='meta-info'>
+      <%%= director %> (<%%= released %>)
+    </h4>
+    <p class='plot'>
+      <%%= plot %>
+    </p>
+    <form action="/users/wish" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="movie_id" value="<%%= id %>">
+      <input type="submit" value="Add To Watch List">
+    </form>
+  </script>
+
+  <script type="text/javascript">
+
+      $(document).ready(function(evt){
+
+        var searchBar = $('#movie_search')
+
+      $(searchBar).hide();
+
+      $('#search-icon').on("click", function(evt){
+        evt.preventDefault();
+        $(searchBar).slideToggle("slow");
+      })
+
+    })
+
+  </script>
+
+
+</body>
+>>>>>>> 0024b814629c0121ba1379aec079f6ccef69b8a9
