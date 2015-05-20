@@ -1,3 +1,45 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Brand Defined Colours
+$asset-slate: #2C3E4F;
+$asset-sky: #3E98D3;
+$asset-dusk: #965DA5;
+$asset-mistyforest: #2CB89A;
+$asset-wenge: #231F20;
+
+// scss imports
+// not yet implemented
+
+// your code
+// not yet implemented
+
+#body-home{
+	margin: 0;
+	background-color: $asset-mistyforest;
+	color: $asset-wenge;
+	img{
+		width: 100px;
+		float: left;
+		margin: 25px 0;
+	}
+	.clear {
+		clear: both;
+	}
+	h1{
+		text-align: left;
+		margin:0 0 10px;
+	}
+	.buttons{
+		margin-top: 45px;
+	}
+	a{
+		background-color: $asset-wenge;
+		margin-bottom: 20px;
+		height: 65px;
+		line-height: 45px;
+	}
+}
+
+
+@import'media_queries';

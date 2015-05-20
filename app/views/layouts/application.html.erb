@@ -8,13 +8,7 @@
 </head>
 <body>
 
-  <% unless current_user %>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/users/new">Sign-Up</a>
-      <a href="/users/log-in">Log-In</a>
-    </nav>
-  <% end %>
+  
 
 <%= yield %>
 
