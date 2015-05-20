@@ -126,13 +126,21 @@ body#body-profile{
 			padding-left: 15px;
 			font-size: 20pt;
 		}
+		h4{
+			font-size: 14pt;
+			padding-left: 15px;
+		}
+		p{
+			padding-left: 15px;
+			max-width: 50%;
+		}
 		input[type="submit"]{
 			background-color: $asset-wenge;
 			border: none;
 			height: 100%;
-			width: 35%;
+			width: 90px;
 			float: right;
-			margin-right: 15px;
+			margin-right: 115px;
 			color: white;
 			font-size: 14pt;
 			padding: 8px;

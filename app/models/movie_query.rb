@@ -24,6 +24,7 @@ class MovieQuery < ActiveRecord::Base
           director: movie["Director"],
           released: movie["Released"],
           plot:movie["Plot"],
+          runtime: movie["Runtime"],
           imdb_id: movie["imdbID"],
         })
         query.movie_id = movie.id
