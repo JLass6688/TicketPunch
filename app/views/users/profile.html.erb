@@ -9,12 +9,11 @@
 <div id='movie-display'></div>
 
 
-<table>
+<ul>
   <% @user.watch_list_entries.each do |entries| %>
-    <tr>
-      <td>
-        <%= entries.movie.title %>
-      </td>
+    <li>
+      <%= entries.movie.title %>
+    </li>
       <td>
         <form action="/users/wish/<%= entries.id %>" method="post">
           <%= token_tag %>
@@ -24,7 +23,7 @@
       </td>
     </tr>
   <% end %>
-</table>
+</ul>
 
 
 
