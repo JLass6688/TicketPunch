@@ -12,7 +12,7 @@
   </div>
 
 
-    
+
   <h5 id="movie-header">My Movies</h5>
 
     <input id='movie_search' type="text" placeholder='...movie title'>
@@ -29,12 +29,15 @@
 
 
 
+
     <table id="sortable" class="movie-container">
 
       <% @user.watch_list_entries.each do |entries| %>
+
         <tr>
           <td class="ui-state-default">
             <h3><%= entries.movie.title %></h3>
+
           </td>
           <td>
             <form action="/users/wish/<%= entries.id %>" method="post">
