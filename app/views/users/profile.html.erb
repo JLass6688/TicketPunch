@@ -12,7 +12,8 @@
   </div>
 
 
-  <h5>My Movies</h5>
+  <h5 id="movie-header">My Movies</h5>
+
     <input id='movie_search' type="text" placeholder='...movie title'>
 
 
@@ -26,7 +27,10 @@
     <div id='movie-display'></div>
 
 
-    <table>
+
+
+    <table id="sortable" class="movie-container">
+
       <% @user.watch_list_entries.each do |entries| %>
         <tr id="sortable">
           <td>
@@ -47,14 +51,14 @@
 
   <script id='movie-template' type='text/template' charset="utf-8">
     <h2 class='title'>
-      <%%= title %>
+      <strong>Title:</strong> <br>    <%%= title %>
     </h2>
-    <h4 class='meta-info'>
+    <h2 class='meta-info'>
       <%%= director %> (<%%= released %>)
-    </h4>
-    <p class='plot'>
+    </h2>
+    <h2 class='plot'>
       <%%= plot %>
-    </p>
+    </h2>
     <form action="/users/wish" method="post">
       <%= token_tag %>
       <input type="hidden" name="movie_id" value="<%%= id %>">
@@ -73,6 +77,8 @@
       $('#search-icon').on("click", function(evt){
         evt.preventDefault();
         $(searchBar).slideToggle("slow");
+        $('#movie-header').hide();
+        $('#movie-container').hide();
       })
 
     })
