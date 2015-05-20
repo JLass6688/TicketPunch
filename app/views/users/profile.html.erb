@@ -26,11 +26,12 @@
     <div id='movie-display'></div>
 
 
-    <ul>
+    <table id="sortable">
       <% @user.watch_list_entries.each do |entries| %>
-        <li>
+        <tr>
+          <td class="ui-state-default">
           <%= entries.movie.title %>
-        </li>
+          </td>
           <td>
             <form action="/users/wish/<%= entries.id %>" method="post">
               <%= token_tag %>
@@ -40,7 +41,7 @@
           </td>
         </tr>
       <% end %>
-    </ul>
+    </table>
 
   </div>
 
