@@ -26,10 +26,10 @@
     <div id='movie-display'></div>
 
 
-    <table id="sortable">
+    <table>
       <% @user.watch_list_entries.each do |entries| %>
-        <tr>
-          <td class="ui-state-default">
+        <tr id="sortable">
+          <td>
           <%= entries.movie.title %>
           </td>
           <td>
